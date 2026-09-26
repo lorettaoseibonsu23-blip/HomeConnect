@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomeConnect Providers</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .provider-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .provider-card {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 22px;
+      }
+
+      .provider-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+      }
+
+      .provider-card h3 {
+        margin: 0;
+      }
+
+      .status-pill {
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: 0.7rem;
+        font-weight: 700;
+        background: rgba(27, 123, 104, 0.08);
+        color: var(--primary-dark);
+      }
+
+      .meta-line {
+        margin: 8px 0;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <div class="brand">
+          <div class="brand-mark">H</div>
+          <span>HomeConnect</span>
+        </div>
+        <nav class="menu">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="providers.html">Providers</a>
+          <a href="wallet.html">Wallet</a>
+        </nav>
+        <a class="button button-primary" href="login.html">Admin login</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="services">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Service providers</p>
+            <h2>Trusted specialists for every home need</h2>
+          </div>
+          <div id="providerGrid" class="provider-grid"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>
+          <div class="brand">
+            <div class="brand-mark">H</div>
+            <span>HomeConnect</span>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="providers.html">Providers</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="providers.js"></script>
+  </body>
+</html>

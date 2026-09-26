@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1001,
+    "client": "Aisha Bello",
+    "service": "Plumbing repair",
+    "amount": 1450,
+    "status": "Paid",
+    "date": "2026-09-15"
+  },
+  {
+    "id": 1002,
+    "client": "Daniel Okafor",
+    "service": "House cleaning",
+    "amount": 980,
+    "status": "Paid",
+    "date": "2026-09-18",
+    "paidAt": "2026-09-26T07:39:10.319Z",
+    "paymentMethod": "App wallet"
+  },
+  {
+    "id": 1003,
+    "client": "Nneka Adebayo",
+    "service": "Security setup",
+    "amount": 2600,
+    "status": "Paid",
+    "date": "2026-09-20"
+  }
+]

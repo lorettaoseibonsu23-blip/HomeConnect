@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomeConnect Invoices</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .invoice-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        overflow: hidden;
+      }
+
+      .invoice-table th,
+      .invoice-table td {
+        padding: 14px 12px;
+        border-bottom: 1px solid var(--line);
+        text-align: left;
+      }
+
+      .invoice-status {
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: 0.72rem;
+        font-weight: 700;
+      }
+
+      .paid {
+        background: rgba(34, 176, 125, 0.12);
+        color: #127b5b;
+      }
+
+      .pending {
+        background: rgba(246, 177, 79, 0.15);
+        color: #a05b00;
+      }
+
+      .pay-button {
+        background: var(--primary);
+        color: #fff;
+        border: none;
+        border-radius: 999px;
+        padding: 8px 14px;
+        font-size: 0.74rem;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .pay-button:disabled {
+        cursor: not-allowed;
+        opacity: 0.7;
+      }
+
+      .wallet-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-bottom: 30px;
+      }
+
+      .wallet-card {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(19, 38, 42, 0.03);
+      }
+
+      .wallet-label {
+        display: block;
+        color: var(--muted);
+        margin-bottom: 12px;
+        font-size: 0.76rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .wallet-value {
+        font-size: clamp(1.5rem, 2vw, 2.4rem);
+        font-weight: 800;
+      }
+
+      .quote-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        overflow: hidden;
+      }
+
+      .quote-table th,
+      .quote-table td {
+        padding: 14px 12px;
+        border-bottom: 1px solid var(--line);
+        text-align: left;
+      }
+
+      .quote-button {
+        background: var(--primary);
+        color: #fff;
+        border: none;
+        border-radius: 999px;
+        padding: 8px 14px;
+        font-size: 0.74rem;
+        font-weight: 700;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <div class="brand">
+          <div class="brand-mark">H</div>
+          <span>HomeConnect</span>
+        </div>
+        <nav class="menu">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="providers.html">Providers</a>
+          <a href="tasks.html">Tasks</a>
+          <a href="invoices.html">Invoices</a>
+          <a href="wallet.html">Wallet</a>
+        </nav>
+        <a class="button button-primary" href="login.html">Admin login</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="services">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Billing</p>
+            <h2>Invoices and payment overview</h2>
+          </div>
+
+          <div class="wallet-grid">
+            <div class="wallet-card">
+              <span class="wallet-label">Available balance</span>
+              <div id="walletBalance" class="wallet-value">Loading...</div>
+            </div>
+            <div class="wallet-card">
+              <span class="wallet-label">Pending quotes</span>
+              <div id="pendingQuoteCount" class="wallet-value">0</div>
+            </div>
+            <div class="wallet-card">
+              <span class="wallet-label">Wallet status</span>
+              <div id="walletStatus" class="wallet-value">Ready</div>
+            </div>
+          </div>
+
+          <div class="section-heading" style="margin-top: 20px;">
+            <p class="eyebrow">Quote review</p>
+            <h2>Approve worker quotes</h2>
+          </div>
+          <div id="quoteTableWrap"></div>
+
+          <div class="section-heading" style="margin-top: 30px;">
+            <p class="eyebrow">Payments</p>
+            <h2>Recent invoices</h2>
+          </div>
+          <div id="invoiceTableWrap"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>
+          <div class="brand">
+            <div class="brand-mark">H</div>
+            <span>HomeConnect</span>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="invoices.html">Invoices</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="invoices.js"></script>
+  </body>
+</html>

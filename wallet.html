@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomeConnect Wallet</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .wallet-shell {
+        max-width: 980px;
+        margin: 40px auto 80px;
+        display: grid;
+        gap: 24px;
+      }
+
+      .wallet-summary {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .wallet-card {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 22px;
+        box-shadow: 0 10px 20px rgba(19, 38, 42, 0.03);
+      }
+
+      .wallet-label {
+        display: block;
+        color: var(--muted);
+        margin-bottom: 12px;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .wallet-value {
+        font-size: clamp(1.8rem, 2vw, 2.6rem);
+        font-weight: 800;
+      }
+
+      .topup-panel,
+      .wallet-panel {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 24px;
+      }
+
+      .topup-form {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 18px;
+      }
+
+      .topup-input {
+        flex: 1 1 220px;
+        padding: 14px 16px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        font-size: 1rem;
+      }
+
+      .button-primary {
+        border: none;
+        border-radius: 12px;
+        padding: 14px 20px;
+        background: var(--primary);
+        color: white;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .wallet-list {
+        list-style: none;
+        padding: 0;
+        margin: 18px 0 0;
+        display: grid;
+        gap: 12px;
+      }
+
+      .wallet-list li {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--line);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <div class="brand">
+          <div class="brand-mark">H</div>
+          <span>HomeConnect</span>
+        </div>
+        <nav class="menu">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="providers.html">Providers</a>
+          <a href="tasks.html">Tasks</a>
+          <a href="invoices.html">Invoices</a>
+          <a href="wallet.html">Wallet</a>
+        </nav>
+        <a class="button button-primary" href="invoices.html">Payments</a>
+      </div>
+    </header>
+
+    <main>
+      <div class="container wallet-shell">
+        <div class="section-heading">
+          <p class="eyebrow">Wallet</p>
+          <h2>Customer balance and top-ups</h2>
+        </div>
+
+        <div class="wallet-summary">
+          <div class="wallet-card">
+            <span class="wallet-label">Available balance</span>
+            <div id="walletBalance" class="wallet-value">Loading...</div>
+          </div>
+
+          <div class="wallet-card">
+            <span class="wallet-label">Currency</span>
+            <div id="walletCurrency" class="wallet-value">USD</div>
+          </div>
+
+          <div class="wallet-card">
+            <span class="wallet-label">Last update</span>
+            <div id="walletUpdated" class="wallet-value">--</div>
+          </div>
+        </div>
+
+        <div class="topup-panel">
+          <h3>Add funds to wallet</h3>
+          <form id="topupForm" class="topup-form">
+            <input
+              class="topup-input"
+              id="topupAmount"
+              type="number"
+              min="1"
+              step="0.01"
+              placeholder="Enter amount"
+              required
+            />
+            <button type="submit" class="button-primary">Top up wallet</button>
+          </form>
+          <p id="topupMessage" class="form-message" aria-live="polite"></p>
+        </div>
+
+        <div class="wallet-panel">
+          <h3>Wallet overview</h3>
+          <ul class="wallet-list">
+            <li><span>Payment method</span><strong>App wallet</strong></li>
+            <li><span>Security</span><strong>Protected</strong></li>
+            <li><span>Spend status</span><strong id="walletStatus">Ready</strong></li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <script src="wallet.js"></script>
+  </body>
+</html>

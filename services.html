@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomeConnect Services</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <div class="brand">
+          <div class="brand-mark">H</div>
+          <span>HomeConnect</span>
+        </div>
+        <nav class="menu">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="providers.html">Providers</a>
+          <a href="wallet.html">Wallet</a>
+        </nav>
+        <a class="button button-primary" href="index.html#booking">Book now</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="services">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Our services</p>
+            <h2>Full home support coverage</h2>
+          </div>
+
+          <div class="filters" aria-label="Service categories filter">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="repair">Repairs</button>
+            <button class="filter-btn" data-filter="maintenance">Maintenance</button>
+            <button class="filter-btn" data-filter="care">Care</button>
+            <button class="filter-btn" data-filter="security">Security</button>
+          </div>
+
+          <div id="serviceGrid" class="service-grid" aria-live="polite"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>
+          <div class="brand">
+            <div class="brand-mark">H</div>
+            <span>HomeConnect</span>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

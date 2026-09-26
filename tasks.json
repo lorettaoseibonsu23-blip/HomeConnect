@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title": "Fix leaking kitchen sink",
+    "category": "Plumbing",
+    "status": "In progress",
+    "assignee": "Adebayo Okafor",
+    "dueDate": "2026-09-27"
+  },
+  {
+    "id": 2,
+    "title": "Deep clean 3-bedroom apartment",
+    "category": "Cleaning",
+    "status": "Scheduled",
+    "assignee": "Chinelo Umeh",
+    "dueDate": "2026-09-28"
+  },
+  {
+    "id": 3,
+    "title": "Inspect home security system",
+    "category": "Security",
+    "status": "Pending",
+    "assignee": "Tunde Bello",
+    "dueDate": "2026-09-29"
+  },
+  {
+    "id": 4,
+    "title": "Repair bedroom wardrobe",
+    "category": "Carpentry",
+    "status": "Assigned",
+    "assignee": "Grace Eze",
+    "dueDate": "2026-09-30"
+  }
+]

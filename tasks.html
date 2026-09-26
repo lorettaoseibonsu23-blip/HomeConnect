@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomeConnect Tasks</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .task-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        overflow: hidden;
+      }
+
+      .task-table th,
+      .task-table td {
+        padding: 14px 12px;
+        border-bottom: 1px solid var(--line);
+        text-align: left;
+      }
+
+      .status-badge {
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(27, 123, 104, 0.08);
+        color: var(--primary-dark);
+        font-size: 0.72rem;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <div class="brand">
+          <div class="brand-mark">H</div>
+          <span>HomeConnect</span>
+        </div>
+        <nav class="menu">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="providers.html">Providers</a>
+          <a href="tasks.html">Tasks</a>
+          <a href="wallet.html">Wallet</a>
+        </nav>
+        <a class="button button-primary" href="login.html">Admin login</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="services">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Task management</p>
+            <h2>Operations and service tracking</h2>
+          </div>
+          <div id="taskTableWrap"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>
+          <div class="brand">
+            <div class="brand-mark">H</div>
+            <span>HomeConnect</span>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="tasks.html">Tasks</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="tasks.js"></script>
+  </body>
+</html>

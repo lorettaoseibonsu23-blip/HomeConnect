@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomeConnect Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="dashboard-page">
+    <div class="dashboard-shell">
+      <aside class="sidebar">
+        <div class="brand sidebar-brand">
+          <div class="brand-mark">H</div>
+          <span>HomeConnect</span>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Main navigation">
+          <a class="nav-item active" href="dashboard.html">Overview</a>
+          <a class="nav-item" href="services.html">Services</a>
+          <a class="nav-item" href="providers.html">Providers</a>
+          <a class="nav-item" href="tasks.html">Tasks</a>
+          <a class="nav-item" href="invoices.html">Invoices</a>
+        </nav>
+
+        <div class="sidebar-card">
+          <span class="muted-label">Monthly target</span>
+          <strong>82%</strong>
+          <small>+12.5% this month</small>
+        </div>
+      </aside>
+
+      <main class="dashboard-main">
+        <header class="dashboard-topbar">
+          <div>
+            <p class="eyebrow">Operations</p>
+            <h1>Home management dashboard</h1>
+          </div>
+
+          <div class="top-actions">
+            <button class="button button-secondary" type="button">Export</button>
+            <a class="button button-primary" href="login.html">Admin logout</a>
+          </div>
+        </header>
+
+        <section class="summary-grid">
+          <article class="summary-card success">
+            <span class="summary-label">Service requests</span>
+            <strong id="requestSummary">Loading...</strong>
+            <small>Across all home categories</small>
+          </article>
+
+          <article class="summary-card">
+            <span class="summary-label">Active providers</span>
+            <strong>24</strong>
+            <small>11 available today</small>
+          </article>
+
+          <article class="summary-card">
+            <span class="summary-label">Revenue</span>
+            <strong>$28.4k</strong>
+            <small>Up 18.2% from last month</small>
+          </article>
+
+          <article class="summary-card warning">
+            <span class="summary-label">Pending jobs</span>
+            <strong>09</strong>
+            <small>3 high-priority tasks</small>
+          </article>
+        </section>
+
+        <section class="content-grid">
+          <div class="panel panel-large">
+            <div class="panel-header-row">
+              <h3>Recent booking activity</h3>
+              <button class="panel-link" type="button">View all</button>
+            </div>
+            <div id="bookingTable" class="booking-table"></div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header-row">
+              <h3>Upcoming jobs</h3>
+            </div>
+            <ul id="upcomingJobs" class="task-list compact">
+              <li><span class="dot green"></span> Plumbing maintenance</li>
+              <li><span class="dot amber"></span> Deep cleaning</li>
+              <li><span class="dot blue"></span> Security check</li>
+              <li><span class="dot green"></span> Laundry pickup</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="insight-grid">
+          <div class="panel">
+            <div class="panel-header-row">
+              <h3>Monthly revenue</h3>
+            </div>
+            <div class="bar-chart" aria-label="Monthly revenue chart">
+              <span style="height: 58%"></span>
+              <span style="height: 80%"></span>
+              <span style="height: 64%"></span>
+              <span style="height: 92%"></span>
+              <span style="height: 78%"></span>
+              <span style="height: 96%"></span>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header-row">
+              <h3>Service mix</h3>
+            </div>
+            <div class="mix-list">
+              <div><span>Cleaning</span><strong>32%</strong></div>
+              <div><span>Plumbing</span><strong>24%</strong></div>
+              <div><span>Security</span><strong>18%</strong></div>
+              <div><span>Maintenance</span><strong>26%</strong></div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+  </body>
+</html>

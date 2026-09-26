@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomeConnect | Home Management Services</title>
+    <meta
+      name="description"
+      content="HomeConnect offers plumbing, carpentry, masonry, cleaning, laundry, security, and full home management services."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <div class="brand">
+          <div class="brand-mark">H</div>
+          <span>HomeConnect</span>
+        </div>
+        <nav class="menu">
+          <a href="#services">Services</a>
+          <a href="#process">How it works</a>
+          <a href="providers.html">Providers</a>
+          <a href="tasks.html">Tasks</a>
+          <a href="invoices.html">Invoices</a>
+          <a href="wallet.html">Wallet</a>
+          <a href="#booking">Book</a>
+        </nav>
+        <a class="button button-primary" href="#booking">Get a quote</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">All-in-one home care</p>
+            <h1>Your home, managed with care.</h1>
+            <p class="lead">
+              Trusted professionals for plumbing, carpentry, masonry, cleaning,
+              laundry, security, and every essential home management service in one place.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#booking">Book a service</a>
+              <a class="button button-secondary" href="#services">Explore services</a>
+            </div>
+            <ul class="trust-list">
+              <li>24/7 support</li>
+              <li>Verified specialists</li>
+              <li>On-time service</li>
+            </ul>
+          </div>
+
+          <div class="hero-panel">
+            <div class="panel-card">
+              <div class="panel-header">
+                <span>Live home dashboard</span>
+                <span class="status-dot">●</span>
+              </div>
+              <div class="mini-stats">
+                <div>
+                  <strong>126</strong>
+                  <span>Services booked</span>
+                </div>
+                <div>
+                  <strong>4.9/5</strong>
+                  <span>Average rating</span>
+                </div>
+              </div>
+              <div class="schedule-item">
+                <div>
+                  <small>Today</small>
+                  <p>Plumbing inspection</p>
+                </div>
+                <span class="time-badge">09:30 AM</span>
+              </div>
+              <div class="schedule-item">
+                <div>
+                  <small>Tomorrow</small>
+                  <p>House cleaning</p>
+                </div>
+                <span class="time-badge">10:00 AM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats-wrap">
+        <div class="container stats-grid">
+          <div class="stat-box">
+            <strong>1,200+</strong>
+            <span>Homes served</span>
+          </div>
+          <div class="stat-box">
+            <strong>18+</strong>
+            <span>Service categories</span>
+          </div>
+          <div class="stat-box">
+            <strong>96%</strong>
+            <span>Repeat clients</span>
+          </div>
+          <div class="stat-box">
+            <strong>2 hrs</strong>
+            <span>Average response</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="services">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Our services</p>
+            <h2>Everything your home needs.</h2>
+          </div>
+
+          <div class="filters" aria-label="Service categories filter">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="repair">Repairs</button>
+            <button class="filter-btn" data-filter="maintenance">Maintenance</button>
+            <button class="filter-btn" data-filter="care">Care</button>
+            <button class="filter-btn" data-filter="security">Security</button>
+          </div>
+
+          <div id="serviceGrid" class="service-grid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section id="process" class="process section-light">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">How it works</p>
+            <h2>Simple, transparent, dependable.</h2>
+          </div>
+
+          <div class="steps">
+            <div class="step-card">
+              <span class="step-number">1</span>
+              <h3>Tell us what you need</h3>
+              <p>Share your issue, preferred time, and location in seconds.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">2</span>
+              <h3>Get matched fast</h3>
+              <p>We connect you with experienced professionals for your task.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">3</span>
+              <h3>Track and relax</h3>
+              <p>Follow updates and receive completion confirmation after service.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="booking" class="booking">
+        <div class="container booking-grid">
+          <div class="booking-copy">
+            <p class="eyebrow">Book now</p>
+            <h2>Request a service in minutes.</h2>
+            <p>
+              Book trusted home professionals for repairs, maintenance, cleaning,
+              and day-to-day home support. We handle the coordination for you.
+            </p>
+            <ul class="feature-list">
+              <li>Flexible scheduling</li>
+              <li>Affordable pricing plans</li>
+              <li>Certified and insured experts</li>
+            </ul>
+          </div>
+
+          <form id="bookingForm" class="booking-form">
+            <div class="field-row">
+              <label>
+                Full name
+                <input type="text" name="name" placeholder="Jane Doe" required />
+              </label>
+              <label>
+                Phone
+                <input type="tel" name="phone" placeholder="+234 800 000 0000" required />
+              </label>
+            </div>
+
+            <label>
+              Service needed
+              <select name="service" required>
+                <option value="">Select a service</option>
+                <option>Plumbing</option>
+                <option>Carpentry</option>
+                <option>Masonry</option>
+                <option>Cleaning</option>
+                <option>Laundry</option>
+                <option>Security</option>
+                <option>Electrical Repair</option>
+                <option>Painting</option>
+                <option>General Maintenance</option>
+              </select>
+            </label>
+
+            <div class="field-row">
+              <label>
+                Preferred date
+                <input type="date" name="date" required />
+              </label>
+              <label>
+                Location
+                <input type="text" name="location" placeholder="Town / area" required />
+              </label>
+            </div>
+
+            <label>
+              Project details
+              <textarea
+                name="details"
+                rows="4"
+                placeholder="Tell us what needs attention..."
+              ></textarea>
+            </label>
+
+            <button type="submit" class="button button-primary full-width">
+              Request service
+            </button>
+            <p id="formMessage" class="form-message" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <section id="dashboard" class="dashboard section-light">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Home management</p>
+            <h2>Stay in control of every room and routine.</h2>
+          </div>
+
+          <div class="dashboard-grid">
+            <div class="dashboard-card">
+              <h3>Active tasks</h3>
+              <ul class="task-list">
+                <li><span class="dot green"></span> Fix leaking kitchen sink</li>
+                <li><span class="dot amber"></span> Deep clean 3 bedrooms</li>
+                <li><span class="dot blue"></span> Security camera inspection</li>
+              </ul>
+            </div>
+
+            <div class="dashboard-card">
+              <h3>Monthly overview</h3>
+              <div class="bar-chart" aria-label="Monthly service chart">
+                <span style="height: 60%"></span>
+                <span style="height: 80%"></span>
+                <span style="height: 50%"></span>
+                <span style="height: 88%"></span>
+                <span style="height: 75%"></span>
+                <span style="height: 95%"></span>
+              </div>
+            </div>
+
+            <div class="dashboard-card">
+              <h3>Recommended plan</h3>
+              <div class="plan-box">
+                <strong>Premium Home Care</strong>
+                <p>For recurring upkeep, cleaning, security and maintenance.</p>
+                <span>Quote-based service plans</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>
+          <div class="brand">
+            <div class="brand-mark">H</div>
+            <span>HomeConnect</span>
+          </div>
+          <p>Home services and management for modern living.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#services">Services</a>
+          <a href="#booking">Booking</a>
+          <a href="#dashboard">Dashboard</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

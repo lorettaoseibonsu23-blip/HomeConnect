@@ -1,0 +1,20 @@
+[
+  {
+    "id": "Q-2041",
+    "customer": "Daniel Okafor",
+    "service": "House cleaning",
+    "amount": 980,
+    "status": "pending",
+    "date": "2026-09-26",
+    "createdAt": "2026-09-26T07:51:34.689Z"
+  },
+  {
+    "id": "Q-2042",
+    "customer": "Aisha Bello",
+    "service": "Plumbing repair",
+    "amount": 1450,
+    "status": "approved",
+    "date": "2026-09-26",
+    "createdAt": "2026-09-26T07:51:34.689Z"
+  }
+]
