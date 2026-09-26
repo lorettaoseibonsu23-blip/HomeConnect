@@ -46,6 +46,14 @@ app.get('/wallet.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'wallet.html'));
 });
 
+app.get('/checkout.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'checkout.html'));
+});
+
+app.get('/account.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'account.html'));
+});
+
 function ensureDataFile() {
   if (!fs.existsSync(DATA_FILE)) {
     fs.writeFileSync(DATA_FILE, JSON.stringify([], null, 2), 'utf8');
@@ -262,9 +270,106 @@ app.post('/api/wallet/topup', (req, res) => {
   });
 });
 
+app.post('/api/checkout', (req, res) => {
+  const {
+    customerName,
+    email,
+    service,
+    amount,
+    paymentMethod,
+    useWallet,
+    cardNumber,
+    expiry,
+    cvc
+  } = req.body || {};
+
+  const numericAmount = Number(amount);
+
+  if (!customerName || !email || !service || !Number.isFinite(numericAmount) || numericAmount <= 0) {
+    return res.status(400).json({ message: 'Please complete the customer details and amount.' });
+  }
+
+  if (paymentMethod === 'card' && (!cardNumber || !expiry || !cvc)) {
+    return res.status(400).json({ message: 'Card payment requires card number, expiry date, and CVV.' });
+  }
+
+  const wallet = readWallet();
+  let paymentStatus = 'Paid';
+  let walletAfter = wallet.balance;
+
+  if (useWallet) {
+    if (wallet.balance < numericAmount) {
+      return res.status(400).json({ message: 'Wallet balance is too low for this payment.' });
+    }
+    walletAfter = Number((wallet.balance - numericAmount).toFixed(2));
+    wallet.balance = walletAfter;
+    wallet.lastUpdated = new Date().toISOString();
+    writeWallet(wallet);
+  }
+
+  const invoice = {
+    id: `INV-${Date.now()}`,
+    client: customerName,
+    service,
+    amount: numericAmount,
+    status: paymentStatus,
+    date: new Date().toISOString().slice(0, 10),
+    paidAt: new Date().toISOString(),
+    paymentMethod: useWallet ? 'App wallet' : (paymentMethod || 'Card')
+  };
+
+  const invoices = readInvoices();
+  invoices.unshift(invoice);
+  writeInvoices(invoices);
+
+  return res.status(200).json({
+    message: 'Payment completed successfully.',
+    invoice,
+    wallet: useWallet ? wallet : undefined,
+    paymentMethod: useWallet ? 'App wallet' : (paymentMethod || 'Card')
+  });
+});
+
 app.get('/api/quotes', (req, res) => {
   const quotes = readQuotes();
   res.json(quotes);
+});
+
+app.post('/api/providers/:id/book', (req, res) => {
+  const { id } = req.params;
+  const { customerName, service, date, note } = req.body || {};
+
+  if (!customerName || !service || !date) {
+    return res.status(400).json({ message: 'Please provide customer name, service and date.' });
+  }
+
+  const providers = JSON.parse(fs.readFileSync(path.join(__dirname, 'providers.json'), 'utf8'));
+  const provider = providers.find((entry) => String(entry.id) === String(id));
+
+  if (!provider) {
+    return res.status(404).json({ message: 'Provider not found.' });
+  }
+
+  const booking = {
+    id: Date.now(),
+    providerId: provider.id,
+    providerName: provider.name,
+    customerName,
+    service,
+    date,
+    note: note || '',
+    status: 'Booked',
+    createdAt: new Date().toISOString()
+  };
+
+  const bookings = readBookings();
+  bookings.unshift(booking);
+  writeBookings(bookings);
+
+  return res.status(200).json({
+    message: 'Provider booked successfully.',
+    booking
+  });
 });
 
 app.post('/api/quotes/:id/approve', (req, res) => {

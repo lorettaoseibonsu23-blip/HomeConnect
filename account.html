@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomeConnect Account</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .account-shell {
+        max-width: 1100px;
+        margin: 40px auto 80px;
+        display: grid;
+        gap: 24px;
+      }
+
+      .account-grid {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 24px;
+      }
+
+      .profile-panel,
+      .activity-panel,
+      .settings-panel {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 24px;
+      }
+
+      .avatar {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        background: rgba(27, 123, 104, 0.12);
+        display: grid;
+        place-items: center;
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: var(--primary-dark);
+        margin-bottom: 18px;
+      }
+
+      .stats-row {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .stat-box {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 16px;
+      }
+
+      .stat-box strong {
+        display: block;
+        font-size: 1.3rem;
+      }
+
+      .list {
+        list-style: none;
+        margin: 18px 0 0;
+        padding: 0;
+        display: grid;
+        gap: 12px;
+      }
+
+      .list li {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--line);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <div class="brand">
+          <div class="brand-mark">H</div>
+          <span>HomeConnect</span>
+        </div>
+        <nav class="menu">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="providers.html">Providers</a>
+          <a href="tasks.html">Tasks</a>
+          <a href="invoices.html">Invoices</a>
+          <a href="wallet.html">Wallet</a>
+          <a href="account.html">Account</a>
+        </nav>
+        <a class="button button-primary" href="checkout.html">Pay now</a>
+      </div>
+    </header>
+
+    <main>
+      <div class="container account-shell">
+        <div class="section-heading">
+          <p class="eyebrow">My account</p>
+          <h2>Customer overview</h2>
+        </div>
+
+        <div class="account-grid">
+          <div class="profile-panel">
+            <div class="avatar">JD</div>
+            <h3>Jane Doe</h3>
+            <p class="muted">jane@example.com</p>
+            <div class="stats-row">
+              <div class="stat-box">
+                <span>Trips</span>
+                <strong>12</strong>
+              </div>
+              <div class="stat-box">
+                <span>Wallet</span>
+                <strong>$2,405</strong>
+              </div>
+              <div class="stat-box">
+                <span>Member</span>
+                <strong>Gold</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity-panel">
+            <h3>Recent activity</h3>
+            <ul class="list">
+              <li><span>Quote approved</span><strong>Plumbing repair</strong></li>
+              <li><span>Wallet top-up</span><strong>$125.00</strong></li>
+              <li><span>Payment completed</span><strong>House cleaning</strong></li>
+              <li><span>Provider booked</span><strong>Security check</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="settings-panel">
+          <h3>Account settings</h3>
+          <ul class="list">
+            <li><span>Contact</span><strong>Verified</strong></li>
+            <li><span>Address</span><strong>6, Parkview Estate</strong></li>
+            <li><span>Notifications</span><strong>Enabled</strong></li>
+            <li><span>Preferred payment</span><strong>App wallet</strong></li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,5 +1,15 @@
 [
   {
+    "id": "INV-1790410430962",
+    "client": "Jane Doe",
+    "service": "Plumbing repair",
+    "amount": 220,
+    "status": "Paid",
+    "date": "2026-09-26",
+    "paidAt": "2026-09-26T08:13:50.962Z",
+    "paymentMethod": "App wallet"
+  },
+  {
     "id": 1001,
     "client": "Aisha Bello",
     "service": "Plumbing repair",
